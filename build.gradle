@@ -1,5 +1,5 @@
 plugins {
-    id "org.akhikhl.gretty" version "1.1.9"
+    id "org.akhikhl.gretty" version "1.2.4"
 }
 
 apply plugin: 'java'
@@ -45,47 +45,8 @@ task jgivenReport(type: JavaExec, dependsOn: 'test') {
 
 ext.fitnessePort = 8000
 
-configurations {
-    fitnesse
-    cucumberRuntime {
-        extendsFrom testRuntime
-    }
-}
-
-
-task cucumber() {
-    dependsOn assemble, compileTestJava, processTestResources
-    doLast {
-        javaexec {
-            main = "cucumber.api.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['-f', 'pretty', '--glue', 'com/xebia/monopoly/cucumber/stepdefs/', 'src/test/resources']
-        }
-    }
-
-}
-
-
-task("writeFitNesseClasspath", type: WriteFitNesseClasspath) {
-    classpath = project.configurations.fitnesse + project.configurations.testCompile
-
-    pagePath = project.file("FitNesseRoot/GradleClasspath")
-}
-
-project.tasks.getByName("clean").dependsOn("cleanWriteFitNesseClasspath")
-
-task("fitNesseRun", type: JavaExec) {
-    dependsOn writeFitNesseClasspath
-    dependsOn compileJava
-    dependsOn compileTestJava
-    classpath configurations.fitnesse
-    main "fitnesseMain.FitNesseMain"
-    args "-p", "8000", "-e", "0"
-
-}
-
 gretty {
     port = 8081
-    servletContainer = 'jetty7'
-    integrationTestTask = 'cucumber'
+    servletContainer = 'jetty9'
+    integrationTestTask = 'jgivenReport'
 }
