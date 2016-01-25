@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="nl.xebia.jgiven.tests.MoveToken.SampleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-01-22T14:56:31" hostname="Nicks-MacBook-Pro.local" time="0.12">
+  <properties/>
+  <testcase name="move_token" classname="nl.xebia.jgiven.tests.MoveToken.SampleTest" time="0.12"/>
+  <system-out><![CDATA[
+Test Class: nl.xebia.jgiven.tests.MoveToken.SampleTest
+
+ Move token
+
+   Given players token is at start position 1
+    When player throws die 1 and die 2
+    Then player token moves to a new 4
+
+]]></system-out>
+  <system-err><![CDATA[127 [Test worker] INFO com.xebia.monopoly.domain.Bank - Bank paid 1500 to com.xebia.monopoly.domain.Player@2fb2a485
+127 [Test worker] INFO com.xebia.monopoly.domain.Bank - Bank paid 1500 to com.xebia.monopoly.domain.Player@3b589bfd
+142 [Test worker] INFO com.xebia.monopoly.domain.Bank - Bank received 200
+]]></system-err>
+</testsuite>
