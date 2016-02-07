@@ -45,3 +45,7 @@ gretty {
     servletContainer = 'jetty9'
     integrationTestTask = 'jgivenReport'
 }
+
+wrapper {
+    version = '2.10'
+}
