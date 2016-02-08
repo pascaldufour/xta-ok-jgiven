@@ -11,9 +11,9 @@ public class SampleTest extends
 
     @Test
     public void move_token() {
-        given().the_players_token_is_at_the_start_position();
-        when().the_player_throws_both_dice();
-        then().the_player_moves_to_a_new_position();
+        given().the_players_token_is_at_position("GO");
+        when().the_player_throws_both_dice(1, 4);
+        then().the_player_moves_to_position("Reading Railroad");
     }
 
 }

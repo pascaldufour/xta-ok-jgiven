@@ -1,9 +1,6 @@
 package helpers;
 
-import com.xebia.monopoly.domain.Dice;
-import com.xebia.monopoly.domain.Game;
-import com.xebia.monopoly.domain.Player;
-import com.xebia.monopoly.domain.Space;
+import com.xebia.monopoly.domain.*;
 
 /**
  * GameFixture class: class
@@ -109,5 +106,9 @@ public class GameHelper {
             setDice(1, 1);
             doPlayAction();
         }
+    }
+
+    public Board board() {
+        return game.getBoard();
     }
 }
