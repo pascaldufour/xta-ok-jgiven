@@ -16,8 +16,7 @@ public class ThenGameOutcome extends Stage<ThenGameOutcome> {
     @ScenarioState
     GameHelper gameHelper;
 
-    @As("he player moves to the \"$\" square")
-    public ThenGameOutcome the_player_moves_to_position(String spaceName) {
+    public ThenGameOutcome the_player_moves_to_the_$_square(String spaceName) {
         gameHelper.doPlayAction();
 
         final Space square = gameHelper.board().getSpaces().get(gameHelper.getNewPosition());

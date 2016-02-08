@@ -13,7 +13,7 @@ public class SampleTest extends
     public void move_token() {
         given().the_players_token_is_at_position("GO");
         when().the_player_throws_both_dice(1, 4);
-        then().the_player_moves_to_position("Reading Railroad");
+        then().the_player_moves_to_the_$_square("Reading Railroad");
     }
 
 }
